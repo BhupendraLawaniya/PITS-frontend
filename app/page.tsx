@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Professional ITS – E-Commerce Back-Office Specialists Since 2010",
@@ -75,9 +76,14 @@ export default function HomePage() {
       <Navbar />
 
       {/* ── HERO ── */}
+     
       <section
         style={{
-          background: "#FDFAF5",
+          backgroundImage: `url('/online-shopping-with-smartphone-lamb.jpg')`,
+          backgroundSize: "91%",
+          backgroundPosition: "left center",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: "#FDFAF5",
           padding: "64px 32px 56px",
           display: "grid",
           gridTemplateColumns: "1fr 380px",
@@ -125,7 +131,7 @@ export default function HomePage() {
             for e-commerce businesses running 500 to 500,000 SKUs.
             Execution-heavy. SLA-backed. No lock-in.
           </p>
-          <div style={{ display: "flex", gap: "10px" }}>
+          <Link href="/audit" style={{ display: "flex", gap: "10px", textDecoration: "none" }}>
             <div
               style={{
                 background: "#2D6A4F",
@@ -151,7 +157,7 @@ export default function HomePage() {
             >
               See what we do
             </div>
-          </div>
+          </Link>
         </div>
 
         <div
@@ -495,7 +501,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-      
+
       {/* ── TRUSTED BRANDS MARQUEE ── */}
       <div
         style={{
@@ -623,11 +629,13 @@ export default function HomePage() {
       >
         <div>
           <div
+            
             style={{
               fontFamily: "var(--font-serif)",
               fontSize: "22px",
               color: "#fff",
               fontWeight: 500,
+             
             }}
           >
             Start with a free catalog audit — no commitment.
@@ -643,7 +651,8 @@ export default function HomePage() {
             what we&apos;d fix. No credit card required.
           </div>
         </div>
-        <div
+        <Link
+          href="/audit"
           style={{
             background: "#2D6A4F",
             color: "#fff",
@@ -653,10 +662,11 @@ export default function HomePage() {
             fontWeight: 500,
             whiteSpace: "nowrap",
             cursor: "pointer",
+            textDecoration:"none"
           }}
         >
           Get free catalog audit
-        </div>
+        </Link>
       </div>
 
       <Footer />
