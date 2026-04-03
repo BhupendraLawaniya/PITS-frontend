@@ -1,65 +1,665 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Professional ITS – E-Commerce Back-Office Specialists Since 2010",
+  description:
+    "Catalog operations, marketplace management, and store back-office for e-commerce businesses running 500 to 500,000 SKUs. Execution-heavy. SLA-backed. No lock-in.",
+};
+
+const solutions = [
+  {
+    num: "01",
+    title: "Catalog & product data operations",
+    body: "High-SKU catalog builds, attribute structuring, bulk uploads, deduplication, and ongoing maintenance.",
+    ai: true,
+  },
+  {
+    num: "02",
+    title: "Marketplace operations",
+    body: "Listing optimisation, Buy Box strategy, suppressed listing management, competitor intelligence — on Amazon, eBay, Walmart.",
+    ai: false,
+  },
+  {
+    num: "03",
+    title: "Ecommerce backoffice management",
+    body: "Customer support, order processing, inventory monitoring, repricing — on an SLA you can hold us to.",
+    ai: false,
+  },
+  {
+    num: "04",
+    title: "Product data cleanup & optimisation",
+    body: "Messy data costs you sales. We audit, deduplicate, enrich, and restructure — at scale.",
+    ai: true,
+  },
+  {
+    num: "05",
+    title: "High-SKU catalog scaling",
+    body: "For distributors, wholesalers, and multi-brand sellers. Scale your catalog without scaling headcount.",
+    ai: false,
+  },
+];
+
+const stats = [
+  { n: "500+", l: "E-commerce stores served globally" },
+  { n: "98%", l: "Client retention rate, year on year" },
+  { n: "4 hr", l: "Average response SLA across all accounts" },
+  { n: "15 yrs", l: "In e-commerce operations — exclusively" },
+];
+
+const services = [
+  { title: "Product data management", sub: "End-to-end" },
+  { title: "Bulk product uploads", sub: "Any platform" },
+  { title: "Attribute structuring", sub: "Filter-ready" },
+  { title: "Image processing", sub: "Compliant sets" },
+  { title: "Order & inventory", sub: "SLA-backed" },
+];
+
+const trustItems = [
+  { n: "Amazon", l: "Seller Central specialists" },
+  { n: "eBay", l: "Cassini-optimised listings" },
+  { n: "Shopify", l: "Full back-office support" },
+  { n: "Walmart +", l: "BigCommerce, Magento, more" },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div
+      style={{
+        fontFamily: "var(--font-sans)",
+        background: "#FDFAF5",
+        color: "#1C1C1C",
+      }}
+    >
+      <Navbar />
+
+      {/* ── HERO ── */}
+      <section
+        style={{
+          background: "#FDFAF5",
+          padding: "64px 32px 56px",
+          display: "grid",
+          gridTemplateColumns: "1fr 380px",
+          gap: "48px",
+          alignItems: "center",
+          borderBottom: "0.5px solid #D5C9B0",
+        }}
+      >
+        <div>
+          <div
+            style={{
+              fontSize: "11px",
+              letterSpacing: "1.5px",
+              color: "#2D6A4F",
+              fontWeight: 500,
+              marginBottom: "16px",
+            }}
+          >
+            E-COMMERCE BACK-OFFICE SPECIALISTS · SINCE 2010
+          </div>
+          <h1
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontSize: "38px",
+              fontWeight: 500,
+              lineHeight: 1.15,
+              color: "#1C1C1C",
+              marginBottom: "16px",
+            }}
+          >
+            Your e-commerce back-office —{" "}
+            <em style={{ color: "#2D6A4F", fontStyle: "italic" }}>handled</em>{" "}
+            by operators who know the platforms.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p
+            style={{
+              fontSize: "14px",
+              color: "#555550",
+              lineHeight: 1.7,
+              marginBottom: "28px",
+              maxWidth: "460px",
+            }}
+          >
+            Catalog operations, marketplace management, and store back-office
+            for e-commerce businesses running 500 to 500,000 SKUs.
+            Execution-heavy. SLA-backed. No lock-in.
           </p>
+          <div style={{ display: "flex", gap: "10px" }}>
+            <div
+              style={{
+                background: "#2D6A4F",
+                color: "#fff",
+                padding: "12px 24px",
+                borderRadius: "4px",
+                fontSize: "13px",
+                fontWeight: 500,
+                cursor: "pointer",
+              }}
+            >
+              Get free catalog audit
+            </div>
+            <div
+              style={{
+                border: "0.5px solid #B4B2A9",
+                color: "#555550",
+                padding: "12px 24px",
+                borderRadius: "4px",
+                fontSize: "13px",
+                cursor: "pointer",
+              }}
+            >
+              See what we do
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <div
+          style={{
+            background: "#F5F0E8",
+            borderRadius: "8px",
+            padding: "24px",
+          }}
+        >
+          <div
+            style={{
+              fontSize: "11px",
+              color: "#888780",
+              marginBottom: "14px",
+              letterSpacing: "0.5px",
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            WHY CLIENTS STAY
+          </div>
+          {stats.map((s, i) => (
+            <div
+              key={i}
+              style={{
+                padding: "14px 0",
+                borderBottom:
+                  i < stats.length - 1 ? "0.5px solid #D5C9B0" : "none",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "28px",
+                  fontWeight: 500,
+                  color: "#2D6A4F",
+                }}
+              >
+                {s.n}
+              </div>
+              <div
+                style={{ fontSize: "12px", color: "#888780", marginTop: "2px" }}
+              >
+                {s.l}
+              </div>
+            </div>
+          ))}
         </div>
-      </main>
+      </section>
+
+      {/* ── TRUST BAR ── */}
+      <div
+        style={{
+          background: "#2D6A4F",
+          padding: "14px 32px",
+          display: "grid",
+          gridTemplateColumns: "repeat(4,1fr)",
+        }}
+      >
+        {trustItems.map((t) => (
+          <div key={t.n} style={{ textAlign: "center" }}>
+            <div
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "20px",
+                color: "#fff",
+                fontWeight: 500,
+              }}
+            >
+              {t.n}
+            </div>
+            <div
+              style={{
+                fontSize: "11px",
+                color: "rgba(255,255,255,0.7)",
+                marginTop: "2px",
+              }}
+            >
+              {t.l}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* ── SOLUTIONS ── */}
+      <section style={{ padding: "56px 32px", background: "#FDFAF5" }}>
+        <div
+          style={{
+            fontSize: "10px",
+            letterSpacing: "1.5px",
+            color: "#2D6A4F",
+            fontWeight: 500,
+            marginBottom: "10px",
+          }}
+        >
+          SOLUTIONS
+        </div>
+        <h2
+          style={{
+            fontFamily: "var(--font-serif)",
+            fontSize: "26px",
+            fontWeight: 500,
+            color: "#1C1C1C",
+            marginBottom: "8px",
+          }}
+        >
+          The operational gap most e-commerce businesses don&apos;t talk about.
+        </h2>
+        <p
+          style={{
+            fontSize: "13px",
+            color: "#555550",
+            lineHeight: 1.65,
+            marginBottom: "32px",
+            maxWidth: "560px",
+          }}
+        >
+          Your products are good. Your marketing works. But the catalog, the
+          listings, the support, the data — that&apos;s where capacity quietly
+          disappears. We fill that gap.
+        </p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3,minmax(0,1fr))",
+            gap: "16px",
+          }}
+        >
+          {solutions.map((s) => (
+            <div
+              key={s.num}
+              style={{
+                background: "#FDFAF5",
+                border: "0.5px solid #D5C9B0",
+                borderRadius: "8px",
+                padding: "20px",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "28px",
+                  color: "#D5C9B0",
+                  fontWeight: 500,
+                  marginBottom: "12px",
+                }}
+              >
+                {s.num}
+              </div>
+              <div
+                style={{
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  color: "#1C1C1C",
+                  marginBottom: "8px",
+                }}
+              >
+                {s.title}
+              </div>
+              <div
+                style={{
+                  fontSize: "12px",
+                  color: "#555550",
+                  lineHeight: 1.6,
+                  marginBottom: "14px",
+                }}
+              >
+                {s.body}
+              </div>
+              {s.ai && (
+                <div
+                  style={{
+                    display: "inline-block",
+                    fontSize: "10px",
+                    color: "#2D6A4F",
+                    background: "#E8F5EE",
+                    padding: "3px 8px",
+                    borderRadius: "3px",
+                    marginBottom: "10px",
+                  }}
+                >
+                  AI-assisted
+                </div>
+              )}
+              {!s.ai && <div style={{ height: "20px" }} />}
+              <div
+                style={{
+                  fontSize: "12px",
+                  color: "#2D6A4F",
+                  fontWeight: 500,
+                  cursor: "pointer",
+                }}
+              >
+                Learn more →
+              </div>
+            </div>
+          ))}
+
+          {/* CTA Card */}
+          <div
+            style={{
+              background: "#E8F5EE",
+              border: "0.5px solid #9FE1CB",
+              borderRadius: "8px",
+              padding: "20px",
+            }}
+          >
+            <div
+              style={{
+                fontSize: "11px",
+                color: "#085041",
+                fontWeight: 500,
+                marginBottom: "10px",
+                letterSpacing: "0.5px",
+              }}
+            >
+              NOT SURE WHERE TO START?
+            </div>
+            <div
+              style={{
+                fontSize: "14px",
+                fontWeight: 500,
+                color: "#085041",
+                marginBottom: "8px",
+              }}
+            >
+              Free catalog audit
+            </div>
+            <div
+              style={{
+                fontSize: "12px",
+                color: "#0F6E56",
+                lineHeight: 1.6,
+                marginBottom: "14px",
+              }}
+            >
+              We review 50 of your SKUs — data completeness, listing quality,
+              attribute accuracy — and deliver a written findings report.
+            </div>
+            <div
+              style={{
+                background: "#2D6A4F",
+                color: "#fff",
+                padding: "9px 16px",
+                borderRadius: "4px",
+                fontSize: "11px",
+                fontWeight: 500,
+                display: "inline-block",
+                cursor: "pointer",
+              }}
+            >
+              Claim free audit
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SERVICES ── */}
+      <section style={{ padding: "56px 32px", background: "#F5F0E8" }}>
+        <div
+          style={{
+            fontSize: "10px",
+            letterSpacing: "1.5px",
+            color: "#2D6A4F",
+            fontWeight: 500,
+            marginBottom: "10px",
+          }}
+        >
+          SERVICES
+        </div>
+        <h2
+          style={{
+            fontFamily: "var(--font-serif)",
+            fontSize: "26px",
+            fontWeight: 500,
+            color: "#1C1C1C",
+            marginBottom: "8px",
+          }}
+        >
+          Every execution service we provide.
+        </h2>
+        <p
+          style={{
+            fontSize: "13px",
+            color: "#555550",
+            lineHeight: 1.65,
+            marginBottom: "32px",
+          }}
+        >
+          For buyers who know exactly what they need.
+        </p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(5,minmax(0,1fr))",
+            gap: "12px",
+          }}
+        >
+          {services.map((s) => (
+            <div
+              key={s.title}
+              style={{
+                background: "#FDFAF5",
+                border: "0.5px solid #D5C9B0",
+                borderRadius: "6px",
+                padding: "14px",
+                textAlign: "center",
+              }}
+            >
+              <div
+                style={{
+                  width: "32px",
+                  height: "32px",
+                  background: "#E8F5EE",
+                  borderRadius: "4px",
+                  margin: "0 auto 10px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <div
+                  style={{
+                    width: "8px",
+                    height: "8px",
+                    background: "#2D6A4F",
+                    borderRadius: "50%",
+                  }}
+                />
+              </div>
+              <div
+                style={{
+                  fontSize: "12px",
+                  fontWeight: 500,
+                  color: "#1C1C1C",
+                  marginBottom: "4px",
+                }}
+              >
+                {s.title}
+              </div>
+              <div style={{ fontSize: "11px", color: "#888780" }}>{s.sub}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+      
+      {/* ── TRUSTED BRANDS MARQUEE ── */}
+      <div
+        style={{
+          padding: "40px 0",
+          borderTop: "0.5px solid #D5C9B0",
+          borderBottom: "0.5px solid #D5C9B0",
+          background: "#FDFAF5",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            textAlign: "center",
+            fontSize: "11px",
+            letterSpacing: "1.5px",
+            color: "#888780",
+            fontWeight: 500,
+            marginBottom: "28px",
+          }}
+        >
+          TRUSTED BY LEADING BRANDS
+        </div>
+
+        <style>{`
+          .marquee-inner { display: flex; animation: marquee 28s linear infinite; white-space: nowrap; }
+          .marquee-inner:hover { animation-play-state: paused; }
+           @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+         `}</style>
+
+        <div
+          style={{ display: "flex", overflow: "hidden", position: "relative" }}
+        >
+          {/* fade edges */}
+          <div
+            style={{
+              position: "absolute",
+              left: 0,
+              top: 0,
+              bottom: 0,
+              width: "80px",
+              background: "linear-gradient(to right, #FDFAF5, transparent)",
+              zIndex: 2,
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              right: 0,
+              top: 0,
+              bottom: 0,
+              width: "80px",
+              background: "linear-gradient(to left, #FDFAF5, transparent)",
+              zIndex: 2,
+            }}
+          />
+
+          <div className="marquee-inner">
+            {[
+              "Vendulex",
+              "Shopify",
+              "eBay",
+              "Walmart",
+              "BigCommerce",
+              "WooCommerce",
+              "Magento",
+              "Etsy",
+              "Amazon",
+              "Shopify",
+              "eBay",
+              "Walmart",
+              "BigCommerce",
+              "WooCommerce",
+              "Magento",
+              "Etsy",
+            ].map((brand, i) => (
+              <div
+                key={i}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "0 40px",
+                  borderRight: "0.5px solid #D5C9B0",
+                  height: "56px",
+                  minWidth: "140px",
+                  flexShrink: 0,
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    color: "#B4B2A9",
+                    letterSpacing: "-0.3px",
+                  }}
+                >
+                  <span
+                    style={{
+                      width: "7px",
+                      height: "7px",
+                      borderRadius: "50%",
+                      background: "#2D6A4F",
+                      marginRight: "7px",
+                      display: "inline-block",
+                      opacity: 0.5,
+                    }}
+                  />
+                  {brand}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── AUDIT BANNER ── */}
+      <div
+        style={{
+          background: "#1C1C1C",
+          padding: "40px 32px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <div>
+          <div
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontSize: "22px",
+              color: "#fff",
+              fontWeight: 500,
+            }}
+          >
+            Start with a free catalog audit — no commitment.
+          </div>
+          <div
+            style={{
+              fontSize: "13px",
+              color: "rgba(255,255,255,0.6)",
+              marginTop: "6px",
+            }}
+          >
+            We review 50 SKUs, deliver a written report, and show you exactly
+            what we&apos;d fix. No credit card required.
+          </div>
+        </div>
+        <div
+          style={{
+            background: "#2D6A4F",
+            color: "#fff",
+            padding: "13px 28px",
+            borderRadius: "4px",
+            fontSize: "13px",
+            fontWeight: 500,
+            whiteSpace: "nowrap",
+            cursor: "pointer",
+          }}
+        >
+          Get free catalog audit
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
 }
