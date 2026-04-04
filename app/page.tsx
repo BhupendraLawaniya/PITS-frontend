@@ -79,7 +79,7 @@ export default function HomePage() {
      
       <section
         style={{
-          backgroundImage: `url('/online-shopping-with-smartphone-lamb.jpg')`,
+          // backgroundImage: `url('/online-shopping-with-smartphone-lamb.jpg')`,
           backgroundSize: "91%",
           backgroundPosition: "left center",
           backgroundRepeat: "no-repeat",
